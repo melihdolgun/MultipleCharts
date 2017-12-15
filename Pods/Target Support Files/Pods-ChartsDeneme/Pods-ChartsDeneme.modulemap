@@ -1,0 +1,6 @@
+framework module Pods_ChartsDeneme {
+  umbrella header "Pods-ChartsDeneme-umbrella.h"
+
+  export *
+  module * { export * }
+}

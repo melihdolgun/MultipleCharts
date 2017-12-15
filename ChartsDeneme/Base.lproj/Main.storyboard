@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChartsDeneme" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="279" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j7q-d7-fgH">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chart" rowHeight="279" id="zYe-ho-JCq" customClass="GrafikCell" customModule="ChartsDeneme" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="279"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zYe-ho-JCq" id="ZrV-LS-iBm">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="278.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1u-vu-k0t" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="0.0" y="8" width="335" height="263"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ri-BR-7s8" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="16" y="16" width="311" height="246.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7Ri-BR-7s8" secondAttribute="bottom" constant="8" id="0RC-i8-76X"/>
+                                                <constraint firstAttribute="trailing" secondItem="y1u-vu-k0t" secondAttribute="trailing" constant="8" id="7js-wz-B1B"/>
+                                                <constraint firstItem="y1u-vu-k0t" firstAttribute="leading" secondItem="ZrV-LS-iBm" secondAttribute="leading" id="Jnu-bV-pQC"/>
+                                                <constraint firstItem="7Ri-BR-7s8" firstAttribute="top" secondItem="ZrV-LS-iBm" secondAttribute="topMargin" constant="8" id="KoX-Rj-vR0"/>
+                                                <constraint firstItem="y1u-vu-k0t" firstAttribute="top" secondItem="ZrV-LS-iBm" secondAttribute="top" constant="8" id="Luh-6z-e8o"/>
+                                                <constraint firstAttribute="bottom" secondItem="y1u-vu-k0t" secondAttribute="bottom" constant="7.5" id="hAJ-c7-OZC"/>
+                                                <constraint firstItem="7Ri-BR-7s8" firstAttribute="leading" secondItem="ZrV-LS-iBm" secondAttribute="leadingMargin" constant="8" id="vay-gA-hFn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7Ri-BR-7s8" secondAttribute="trailing" constant="8" id="zTs-Q6-Qeu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="barChartView" destination="y1u-vu-k0t" id="J0D-vR-vUH"/>
+                                            <outlet property="lineChartView" destination="7Ri-BR-7s8" id="Lw5-ly-wgd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pAS-4u-NPF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0IV-aH-TDK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="j7q-d7-fgH" secondAttribute="trailing" id="44C-De-dGy"/>
+                            <constraint firstItem="j7q-d7-fgH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7ay-Fp-J8q"/>
+                            <constraint firstItem="j7q-d7-fgH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KsL-w6-DIj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j7q-d7-fgH" secondAttribute="bottom" id="opn-iO-hpD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTableView" destination="j7q-d7-fgH" id="YSM-IZ-zch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
